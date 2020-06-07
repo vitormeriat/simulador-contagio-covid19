@@ -43,8 +43,6 @@ class BrownianMotionBasedSimulation:
     def start_people(self):
         """ Starts a population """
 
-        #def get_people_random_location(): return random(self.N)*self.D
-        # init people
         self.people = pd.DataFrame({
             'x': self.generate_random_location(),
             'y': self.generate_random_location(),
@@ -86,7 +84,6 @@ class BrownianMotionBasedSimulation:
         
         for i, label in enumerate(list('SIR')):            
             self.plot.bar(days, self.history[label])
-        #self.plot.title(f'S: {rs[0]} - I: {rs[1]} - R: {rs[2]}', fontsize=16)
         self.plot.legend(list('SIR'))        
         
         ## bottom
@@ -97,7 +94,6 @@ class BrownianMotionBasedSimulation:
         self.plot.title(f'SIR - day: {len(self.history)}', fontsize=16)
         self.plot.legend(loc="upper right")
         self.plot.xlim(0, self.N)
-        #self.plot.ylim(0, self.N)
         self.plot.xlabel('day')
         self.plot.ylabel('count')        
 
@@ -115,7 +111,6 @@ class BrownianMotionBasedSimulation:
         self.people.loc[:, ['x', 'y']] += dps
 
     def infect(self):
-        # seleciona as pessoas com status 1
         infectors = self.people.query('status == 1')
         # verifica a quantidade de infectados
         infected = len(infectors)
@@ -161,8 +156,7 @@ class Visualization:
 
 if __name__ == '__main__':
 
-    #plt.style.use('ggplot')
-    plt.style.use('fivethirtyeight')
+    plt.style.use('ggplot')    
     fig = plt.figure(figsize=(16, 12))
 
     visualization = Visualization(days=days, plot=plt)

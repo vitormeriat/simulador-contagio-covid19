@@ -1,5 +1,10 @@
 # Simulador do contágio de COVID-19
 
+### Autores
+* Anderson M. Silva
+* Letícia S. Soraes
+* Vitor C. M. Pereira
+
 Esta é a implementação de um modelo para simulação de doenças infecciosas, tendo como base o parametros do SIR em conjunto com o princípio da aplicação de autômatos celulares.
 
 Para essa finalidade, nossa simulação tende a mostrar como se daria o comportamento infeccioso usando como principal foco a mobilidade de uma população sem isolamento social. Sendo assim, utilizando os princípios do movimento browniano, é possível simular os processo do contágio de uma população com base em seu nível de mobilidade.

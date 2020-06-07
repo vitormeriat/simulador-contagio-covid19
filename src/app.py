@@ -145,7 +145,7 @@ class Visualization:
         self.days = days
         self.plot = plot
 
-    def save(self, day):
+    def save(self, day, is_last=False):
         self.plot.savefig(r'plots/day{}.png'.format(day))
 
     def generate_gif(self):

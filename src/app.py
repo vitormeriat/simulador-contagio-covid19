@@ -158,22 +158,25 @@ class BrownianMotionBasedSimulation:
 
 class Visualization:
 
-    def __init__(self, days, plot):
-        self.days = days
+    def __init__(self, parameters, plot):
+        self.days = parameters.days
+        self.S = parameters.S
+        self.I = parameters.I
         self.plot = plot
 
     def save(self, day, is_last=False):
         if self.days == (day+1):
-            self.plot.savefig(r'output/day{}.png'.format(day+1))
-
-        self.plot.savefig(r'plots/day{}.png'.format(day+1))
+            self.plot.savefig(f'output/day-{day+1}_S-{self.S}_I-{self.I}.png')
+            
+        self.plot.savefig(f'plots/day{day+1}.png')
 
     def generate_gif(self):
         frames = []
         for i in range(self.days):
-            frames.append(imageio.imread(r'plots/day{}.png'.format(i+1)))
-        imageio.mimsave(r'output/{}days.gif'.format(self.days),
-                        frames, 'GIF', duration=0.1)
+            frames.append(imageio.imread(f'plots/day{i+1}.png'))
+
+        imageio.mimsave(
+            f'output/days-{self.days}_S-{self.S}_I-{self.I}.gif', frames, 'GIF', duration=0.1)
 
 
 if __name__ == '__main__':
@@ -195,7 +198,7 @@ if __name__ == '__main__':
     plt.style.use('ggplot')
     fig = plt.figure(figsize=(16, 12))
 
-    visualization = Visualization(days=parameters.days, plot=plt)
+    visualization = Visualization(parameters, plot=plt)
 
     motion_simulation = BrownianMotionBasedSimulation(parameters, plot=plt)
 

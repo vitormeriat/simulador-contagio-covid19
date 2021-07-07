@@ -30,3 +30,8 @@ Para essa finalidade, nossa simulação tende a mostrar como se daria o comporta
 * Brasil. Ministério da Saúde. Coronavírus: o que você precisa saber e como prevenir o contágio. [cited 2020 Feb 18]. Available from: https://saude.gov.br/saude-de-a-z/coronavírus.
 * Movimento browniano: uma proposta do uso das novas tecnologias no ensino de física. JS Figueira. Revista Brasileira de Ensino de Física 33 (4), 4314-4314
 * Aplicação de métodos de busca em grafos com nós parcialmente ordenados à locação de torres de tranmissão. Figueiredo,J.N.; Gonzaga, C.C. Pesquisa Operacional. Vol. 23, Issue 1, pp.
+
+
+
+done!
+
